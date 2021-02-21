@@ -145,3 +145,4 @@ para entrar a la otra rama debo darle  checkout NOMBRE_DE_LA_RAMA
 
 VAMOS A HACER GIT MERGE
 cssmatic.com sirve para revisar sobre los colores de CSS
+existe un comando que se llama git branch y sirve para saber cuales son las ramas que hay, además puedes ver en cual estás
