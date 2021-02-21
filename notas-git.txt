@@ -1,0 +1,148 @@
+Creamos un archivodesde VSCode, luego desde la terminal le damos lo siguiente 
+"git init" es lo primero que debemos hacer
+git status
+-> aparece el estado del repo
+
+git add archivo_a_añadir
+
+git status
+
+vemos que cambia
+
+--------------------
+
+si quiero eliminar el archivo de alli, le debo dar git rm --cached archivo_a_eliminar
+el cached significa memoria RAM
+
+
+###ANTES DE HACER UN COMMIT --> CONFIGURAR EL GIT
+normalmente seria git commit -m "mensaje a escribir"
+vamos a usar el comando git config --global , cuando se usa doble guion es para palabras 
+
+git config --global user.name Diego Ariza
+
+
+git config --list --> sirve para ver las variables de la configuracion en el git
+cuando voy a hacer cambios dentro del archivo, listo, lo hago, pero primero debo darle git add nombre_del_archivo y ahi si luego darle el commit
+
+
+
+le damos el comando git log nombre_del_archivo para ver los cambios
+------------------------------------------------------------------------
+comando git show nombre_del_archivo para ver todos los cambios 
+para leer el show, diff es mostrar la diferencia, luego va el indicador de las diferentes versiones, lo azul son los bites que cambiaron, luego muestra los cambios y ya 
+si mando un commit sin mensajes me sale un error para mandar
+para salir es Esc + Shift + zz en Windows
+-------------------------------------
+cuando entramos a nano (otro editor de Ubuntu) para salir necesito poner Ctrl + o 
+Enter
+Ctrl + x
+git show muestra la diferencia del commit, mientras que git log muestra como tal los mensajes de cada commit
+git diff ##Codigo del commit _espacio_ ##CodigoOtroCommit
+--------------------------------------------------
+CLASE Volver en el tiempo en nuestro repositorio utilizando reset y checkout
+Si quiero volver a una version anterior, debo usar el git reset \ git reset NUMERO DEL COMMIT --hard es fuerte, mientras que si en --soft, en el directorio de trabajo vuelve a la version anterior, pero para nuevos commits, esta disponible
+antes de hacer un commit, al hacer git diff, me muestra la diferencia entre el staging y lo que tengo en mi directorio actual de trabajo, lo cual es muuuy util 
+otro comando es  log --stat para ver los diferentes cambios que se realizaron dentro dcada uno de los archivos
+para ver el archivo en su primer commit debo hacer algo que se llama checkout
+
+---------------------------------------------------------------------------------------------
+Git reset y git rm son comandos con utilidades muy diferentes, pero aún así se confunden muy fácilmente.
+
+git rm
+Este comando nos ayuda a eliminar archivos de Git sin eliminar su historial del sistema de versiones. Esto quiere decir que si necesitamos recuperar el archivo solo debemos “viajar en el tiempo” y recuperar el último commit antes de borrar el archivo en cuestión.
+
+Recuerda que git rm no puede usarse así nomás. Debemos usar uno de los flags para indicarle a Git cómo eliminar los archivos que ya no necesitamos en la última versión del proyecto:
+
+git rm --cached: Elimina los archivos del área de Staging y del próximo commit pero los mantiene en nuestro disco duro.
+git rm --force: Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+git reset
+Este comando nos ayuda a volver en el tiempo. Pero no como git checkout que nos deja ir, mirar, pasear y volver. Con git reset volvemos al pasado sin la posibilidad de volver al futuro. Borramos la historia y la debemos sobreescribir. No hay vuelta atrás.
+
+Este comando es muy peligroso y debemos usarlo solo en caso de emergencia. Recuerda que debemos usar alguna de estas dos opciones:
+
+Hay dos formas de usar git reset: con el argumento --hard, borrando toda la información que tengamos en el área de staging (y perdiendo todo para siempre). O, un poco más seguro, con el argumento --soft, que mantiene allí los archivos del área de staging para que podamos aplicar nuestros últimos cambios pero desde un commit anterior.
+
+git reset --soft: Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.
+git reset --hard: Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.
+¡Pero todavía falta algo!
+
+git reset HEAD: Este es el comando para sacar archivos del área de Staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
+¿Por qué esto es importante?
+Imagina el siguiente caso:
+
+Hacemos cambios en los archivos de un proyecto para una nueva actualización. Todos los archivos con cambios se mueven al área de staging con el comando git add. Pero te das cuenta de que uno de esos archivos no está listo todavía. Actualizaste el archivo pero ese cambio no debe ir en el próximo commit por ahora.
+
+¿Qué podemos hacer?
+
+Bueno, todos los cambios están en el área de Staging, incluido el archivo con los cambios que no están listos. Esto significa que debemos sacar ese archivo de Staging para poder hacer commit de todos los demás.
+
+¡Al usar git rm lo que haremos será eliminar este archivo completamente de git! Todavía tendremos el historial de cambios de este archivo, con la eliminación del archivo como su última actualización. Recuerda que en este caso no buscábamos eliminar un archivo, solo dejarlo como estaba y actualizarlo después, no en este commit.
+
+En cambio, si usamos git reset HEAD, lo único que haremos será mover estos cambios de Staging a Unstaged. Seguiremos teniendo los últimos cambios del archivo, el repositorio mantendrá el archivo (no con sus últimos cambios pero sí con los últimos en los que hicimos commit) y no habremos perdido nada.
+
+Conclusión: Lo mejor que puedes hacer para salvar tu puesto y evitar un incendio en tu trabajo es conocer muy bien la diferencia y los riesgos de todos los comandos de Git.
+
+
+
+----------------------------------------------------------------------------------------------
+
+COMANDOS IMPORTANTES:
+
+Algunos comandos que pueden ayudar cuando colaboren con proyectos muy grandes de github:
+
+git log --oneline - Te muestra el id commit y el título del commit.
+git log --decorate- Te muestra donde se encuentra el head point en el log.
+git log --stat - Explica el número de líneas que se cambiaron brevemente.
+git log -p- Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.
+git shortlog - Indica que commits ha realizado un usuario, mostrando el usuario y el titulo de sus commits.
+git log --graph --oneline --decorate y
+git log --pretty=format:"%cn hizo un commit %h el dia %cd" - Muestra mensajes personalizados de los commits.
+git log -3 - Limitamos el número de commits.
+git log --after=“2018-1-2” ,
+git log --after=“today” y
+git log --after=“2018-1-2” --before=“today” - Commits para localizar por fechas.
+git log --author=“Name Author” - Commits realizados por autor que cumplan exactamente con el nombre.
+git log --grep=“INVIE” - Busca los commits que cumplan tal cual está escrito entre las comillas.
+git log --grep=“INVIE” –i- Busca los commits que cumplan sin importar mayúsculas o minúsculas.
+git log – index.html- Busca los commits en un archivo en específico.
+git log -S “Por contenido”- Buscar los commits con el contenido dentro del archivo.
+git log > log.txt - guardar los logs en un archivo txt
+
+
+----------------------------------------------------------------------------------------------------
+
+Cuando estoy trabajando en un repositorio remoto (GitHub o GitLab) para traerlo
+
+$git clone
+
+Cuando quiero subir el archivo:
+
+$git push
+
+
+Cuando quiero traer el repo remoto a mi repositorio local, porque alguien mas hizo algo, hago un
+
+$git fetch
+
+
+cuando quiero pasar de repo local a wdir, debo hacer un
+
+$git merge
+
+sin embargo, hay uno que hace ambas cosas
+
+$git pull : copia la base de datos
+podemos hacer un git commit -am para hacer un add automatico a archivos que ya habia agregado anteriormente
+tambien solo  commit -a y me entrará al editor de texto de siempre del commit
+con git show puedo ver los cambios del commit
+para generar otra rama debo darle git branch NOMBRE_DE_LA_RAMA
+para entrar a la otra rama debo darle  checkout NOMBRE_DE_LA_RAMA
+
+
+
+---------------------------------------------------------------
+
+VAMOS A HACER GIT MERGE
+cssmatic.com sirve para revisar sobre los colores de CSS
+existe un comando que se llama git branch y sirve para saber cuales son las ramas que hay, además puedes ver en cual estás
