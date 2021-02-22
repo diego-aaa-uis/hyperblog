@@ -146,3 +146,31 @@ para entrar a la otra rama debo darle  checkout NOMBRE_DE_LA_RAMA
 VAMOS A HACER GIT MERGE
 cssmatic.com sirve para revisar sobre los colores de CSS
 existe un comando que se llama git branch y sirve para saber cuales son las ramas que hay, además puedes ver en cual estás
+
+
+--------------------------------------------------------------
+COMO HACERLO CON GITHUB
+
+-Entro a GitHub
+-Creo un repositorio
+-Copio la dirección del repo
+-En mi terminal: git remote add origin LINK DEL PASO ANTERIOR
+-tecleo $git remote y sale que hay un origin
+-tecleo $git remote -v | y sale que hay un origin con dos direcciones que tienen persmisos para (fetch) and (pull)
+-luego tecleo $git push origin master
+-doy el user y contraseña
+A freddy le pasa lo siguiente::
+
+le sale un error: rechaza las actualizaciones
+porque el remoto tiene cosas diferentes que no hay en el local
+Porque hay archivos por ejemplo cuando es nuevo que es solo README.md
+entonces hay que integrar los cambios remotos antes de hacer un push
+se puede hacer git fetch o git push
+pero Freddy hizo $git pull origin master|
+
+
+le salió un warning
+
+cuando hay un fatal: refusing to merge unrelated histories la solucion es la siguiente:
+
+$git pull origin master --allow-unrelated-histories
