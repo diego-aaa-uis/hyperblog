@@ -179,3 +179,6 @@ el $git pull origin master
 trae todos mis archivos de github a mi repo git en local 
 
 en el github puedo mirar toda la historia de los commits
+el codigo  log --all --graph --decorate --oneline muestra todo de forma gráfica todo de cómo sucedió
+ para poner un tag dentro de la versiones, necesito conocer el hash a través del comando de arriba, copio el hash, y luego pongo el comando  tag -a v0.1 -m MENSAJE HASH
+quiero ver los tags, la primera es usando  tag | pero esa no es buena, así que es mejor usar  show-ref --tags
