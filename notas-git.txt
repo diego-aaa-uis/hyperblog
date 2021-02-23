@@ -174,3 +174,8 @@ le salió un warning
 cuando hay un fatal: refusing to merge unrelated histories la solucion es la siguiente:
 
 $git pull origin master --allow-unrelated-histories
+
+el $git pull origin master
+trae todos mis archivos de github a mi repo git en local 
+
+en el github puedo mirar toda la historia de los commits
