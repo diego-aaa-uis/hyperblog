@@ -179,3 +179,9 @@ el $git pull origin master
 trae todos mis archivos de github a mi repo git en local 
 
 en el github puedo mirar toda la historia de los commits
+
+-------------------------------------------------------------------------------------------------------
+
+Ahora estamos viendo como poner colaboradores dentro del repositorio, por ahora solo se "creó" un nuevo usuario
+pero no tengo la posibilidad de hacerlo, así que mucho ojo, creé un marcador para esto..
+
