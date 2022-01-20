@@ -1,6 +1,31 @@
-body 
+body
 {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: crimson;
+    font-size: 16px;
+    margin: 0pt;
+    padding: 0pt;
+}
+#container
+{
+    color: #333;
+    text-align: justify;
+    font-size: medium;
+    font-family: fantasy;
+    width: 70%;
+    padding: 1cm;
+    text-align: left;
+    border: 1px solid thistle;
+}
+
+#post 
+{
+    color: darkslategrey;
+    font-family: serif;
+    width: 70%;
+    
+    
+}
+
+#parrafo {
+    
+    font-family: initial;
 }
