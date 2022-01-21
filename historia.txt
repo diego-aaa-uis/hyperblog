@@ -1,3 +1,9 @@
-Esta es una historia de prueba para el curso de Git y GitHub
-Diego va a cumplir 25 años y nació en Colombia
-Hablaremos de su vida y obra maestra
+Esta es la historia de Diego Alexander Ariza 
+
+Diego tiene 23 años y nació en Colombia
+
+
+Hoy hablaremos de su historia.
+
+Mañana nos enfocaremos en su vida laboral
+
