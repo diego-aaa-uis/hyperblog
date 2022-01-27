@@ -179,9 +179,25 @@ el $git pull origin master
 trae todos mis archivos de github a mi repo git en local 
 
 en el github puedo mirar toda la historia de los commits
+<<<<<<< HEAD
 
 -------------------------------------------------------------------------------------------------------
 
 Ahora estamos viendo como poner colaboradores dentro del repositorio, por ahora solo se "creó" un nuevo usuario
 pero no tengo la posibilidad de hacerlo, así que mucho ojo, creé un marcador para esto..
 
+=======
+el codigo  log --all --graph --decorate --oneline muestra todo de forma gráfica todo de cómo sucedió
+ para poner un tag dentro de la versiones, necesito conocer el hash a través del comando de arriba, copio el hash, y luego pongo el comando  tag -a v0.1 -m MENSAJE HASH
+quiero ver los tags, la primera es usando  tag | pero esa no es buena, así que es mejor usar  show-ref --tags
+para solo agregar los tags al repo de Github, lo que tenemos que hacer es poner el siguiente comando,  push origin --tags | luego de haber hecho un  pull origin master
+tengo algunos problemas con los tags, por ejemplo hice algo completamente mal, con  tag tengo la posibilidad de ver los tags que hay dentro del repo, asi que puedo hacer git tag -d NOMBRE DEL TAG y hacer lo mismo, pull, push --tags
+en github va a quedar el tag que dentro de nuestra máquina aún está, asi que debos hacer  push origin :refs/tags/nombreDelTagAEliminar
+
+
+----------------------------------------------------
+
+
+ahora veremos como enviar diferentes ramas al servidor de github
+antes de iniciar,el comando  show-branch -all | me muestra sobre las ramas de mi repositorio 
+>>>>>>> 4fb396607ee5407624313dec709f53d6bb927de6
