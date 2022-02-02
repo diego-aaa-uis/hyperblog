@@ -200,4 +200,11 @@ en github va a quedar el tag que dentro de nuestra máquina aún está, asi que 
 
 ahora veremos como enviar diferentes ramas al servidor de github
 antes de iniciar,el comando  show-branch -all | me muestra sobre las ramas de mi repositorio 
+
+
 >>>>>>> 4fb396607ee5407624313dec709f53d6bb927de6
+
+
+
+Estoy creando esto porque quiero
+
